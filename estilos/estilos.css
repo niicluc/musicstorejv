@@ -1,0 +1,952 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62, 5%;
+}
+
+/*GRIDS*/
+.menuYLogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.3fr 2.4fr 0.1fr 0.1fr;
+    gap: 9px 9px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "mainI mainI mainI mainI"
+        "mainI mainI mainI mainI"
+        "mainI mainI mainI mainI"
+        "footerT footerT footerT footerT";
+}
+
+.gridContacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.3fr 0.2fr, 6fr 0.1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "mainC mainC mainC mainC"
+        "formularioContacto formularioContacto formularioContacto formularioContacto"
+        "footerT footerT footerT footerT";
+}
+
+.gridEnvios {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.3fr 0.2fr 0.2fr, 6fr 0.1fr;
+    gap: 9px 9px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "novedadesTexto novedadesTexto novedadesTexto novedadesTexto"
+        "mainE mainE mainE mainE"
+        "mainE mainE mainE mainE"
+        "footerT footerT footerT footerT";
+}
+
+.gridEnvios2 {
+/*es el del html novedades*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.3fr 0.2fr, 6fr 0.1fr;
+    gap: 9px 9px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "enviosTexto enviosTexto enviosTexto enviosTexto"
+        "main main main main"
+        "footerT footerT footerT footerT";
+}
+
+.gridPromos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.3fr 0.2fr, 6fr 0.1fr;
+    gap: 9px 9px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "mainP mainP mainP mainP"
+        "mainP mainP mainP mainP"
+        "footerT footerT footerT footerT";
+}
+
+.gridCds {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 2.4fr 0.1fr 0.1fr;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        "logo logo logo logo"
+        "menuP menuP menuP menuP"
+        "mainCD mainCD mainCD mainCD"
+        "mainCD mainCD mainCD mainCD"
+        "footerT footerT footerT footerT";
+}
+
+/*aca termina grids*/
+
+/*Propiedades grids */
+.logo {
+    grid-area: logo;
+    width: 100%;
+}
+
+.menuP {
+    grid-area: menuP;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+}
+
+.carrousel {
+    grid-area: carrousel;
+}
+
+.discosTitulo {
+    grid-area: discosTitulo;
+    text-align: center;
+    background-color: #00cbf3;
+    color: #000000;
+    width: 100%;
+
+}
+
+.cds {
+    grid-area: cds;
+    width: 100%;
+}
+
+.contactanos {
+    grid-area: contactanos;
+    text-align: center;
+    background-color: #00cbf3;
+    width: 100%;
+    height: 100%;
+}
+
+.formularioContacto {
+    grid-area: formularioContacto;
+    width: 100%;
+}
+
+.cuadroEnvio {
+    grid-area: cuadroEnvio;
+}
+
+.novedadesTexto {
+    grid-area: novedadesTexto;
+    text-align: center;
+    background-color: #00cbf3;
+    width: 100%;
+}
+
+.musicaSpotify {
+    grid-area: musicaSpotify;
+}
+
+.promosTexto {
+    text-align: center;
+    background-color: #00cbf3;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadrosPromo {
+    grid-area: cuadrosPromo;
+}
+
+.main {
+    grid-area: main;
+    width: 100%;
+}
+
+.mainE {
+    grid-area: mainE;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainI {
+    grid-area: mainI;
+    width: 100%;
+}
+
+.mainP {
+    grid-area: mainP;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mainC {
+    grid-area: mainC;
+    width: 100%;
+}
+
+.mainCD {
+    grid-area: mainCD;
+    width: 100%;
+}
+
+
+.footerG {
+    grid-area: footer;
+    background-color: #000000;
+    width: 100%;
+}
+
+/*aca termina propiedades grids*/
+
+/*Estilos Index, Promo, Novedades, Contacto, Envios*/
+
+.menu li {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    padding: 10px 10px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    color: #000000;
+}
+
+.menu li a {
+    text-align: center;
+    text-decoration: none;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    color: #000000;
+}
+
+.menu li:hover ul {
+    text-align: center;
+    display: block;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    color: #000000;
+    background-color: #00cbf3;
+}
+
+.carrouselFondo {
+    grid-area: carrousel;
+}
+
+.h2T {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.disco1 {
+    margin-top: 10px;
+    margin-right: 90px;
+    margin-bottom: 10px;
+    margin-left: 300px;
+}
+
+.centrarImg {
+    text-align: center;
+}
+
+.botonComprar {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.botonComprar div {
+    width: 300px;
+    height: 330px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.botonComprar a {
+    text-align: center;
+    text-decoration: none;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+}
+
+.sectionNovedadesMusica {
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionNovedadesMusica div {
+    background-color: #000000;
+    width: 260px;
+    height: 510px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.h2P {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.linkTex{
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+.linkTex a{
+    color: #ffffff;
+}
+.cdsLista a:visited{
+    color: #ffffff;
+}
+/*Flexbox Promociones*/
+.promosConSem {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.promocionesSUB {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 190px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 6px solid #00cbf3;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    gap: 5px;
+}
+
+.imputEmail {
+    width: 250px;
+}
+
+/*aca termina flexbox promociones*/
+
+/*Flexbox envios*/
+.sectionEnvios {
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 100%;
+}
+
+.sectionEnvios div {
+    width: 150px;
+    height: 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #00cbf3;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.sectionEnviosT {
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 100%;
+}
+
+.sectionEnviosT div {
+    width: 150px;
+    height: 30px;
+    background-color: #000000;
+    color: #00cbf3;
+    border: 2px solid #00cbf3;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+.envioCentrar {
+    width: 100%;
+}
+
+/*aca termina flexbox envios*/
+
+.pFont {
+    margin: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+/*flexbox contactos*/
+
+.formularioContacto {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.formularioContacto div {
+    width: 700px;
+    height: 400px;
+    background-color: #000000;
+    color: #00cbf3;
+    border: 2px solid #ffffff;
+}
+
+.container {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+div.container {
+    width: 96%;
+    max-width: 1022px;
+    margin: 0 auto;
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+#footer {
+    background-color: #000000;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    color: #fff;
+}
+
+.footerT {
+    grid-area: footerT;
+    background-color: #000000;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerT a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00cbf3;
+}
+
+/*RESPONSIVE INDEX*/
+
+/*TABLET*/
+@media screen and (max-width: 1024px) {
+    .menuYLogo {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 0, 2fr);
+    }
+
+    .botonComprar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .botonComprar div {
+        width: 330px;
+        height: 330px;
+        border: 2px;
+        margin: 10px;
+    }
+}
+
+/*CELULAR*/
+@media screen and (max-width: 500px) {
+    .menuYLogo {
+        display: grid;
+        grid-template-columns: 1 fr 1 fr;
+        grid-template-rows: 0, 2fr 0, 2fr 0, 2fr 0, 2fr;
+    }
+
+    .menu li {
+        display: list-item;
+        font-size: 15px;
+        color: #000000;
+        background-color: #ffffff;
+        width: 100%;
+    }
+
+    .menu li a {
+        background-color: #ffffff;
+    }
+
+    .menu li:hover ul {
+        color: #000000;
+        background-color: #00cbf3;
+    }
+
+    .h2T {
+        font-size: 20px;
+    }
+
+    .botonComprar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .botonComprar div {
+        width: 330px;
+        height: 330px;
+        border: 2px;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+
+}
+
+/* aca termina responsive index*/
+
+/*RESPONSIVE NOVEDADES*/
+/*Tablet*/
+
+@media screen and (max-width: 1024px) {
+    .gridNovedades {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+    }
+
+    .sectionNovedadesMusica {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+/*celular*/
+@media screen and (max-width: 500px) {
+    .gridNovedades {
+        display: grid;
+        grid-template-columns: repeat (1fr);
+        grid-template-rows: repeat (4, 1fr);
+    }
+
+    .sectionNovedadesMusica {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+
+}
+
+/*RESPONSIVE ENVIOS*/
+/*Tablet*/
+@media screen and (max-width: 1024px) {
+    .gridEnvio {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+    }
+}
+
+/*Celular*/
+@media screen and (max-width: 500px) {
+    .gridEnvio {
+        display: grid;
+        grid-template-columns: repeat (1fr);
+        grid-template-rows: repeat (4, 1fr);
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+}
+
+/*RESPONSIVE CONTACTO*/
+/*Tablet*/
+@media screen and (max-width: 1024px) {
+    .gridContacto {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+    }
+}
+
+/*Celular*/
+@media screen and (max-width: 500px) {
+    .gridContacto {
+        display: grid;
+        grid-template-columns: repeat (1fr);
+        grid-template-rows: repeat (4, 1fr);
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+}
+
+/*RESPONSIVE PROMOS*/
+/*Tablet*/
+@media screen and (max-width: 1024px) {
+    .gridPromos {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+    }
+
+    .promosConSem {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .textoCent {
+        margin: 20px;
+    }
+}
+
+/*Celular*/
+@media screen and (max-width: 500px) {
+    .gridPromos {
+        display: grid;
+        grid-template-columns: repeat (1fr);
+        grid-template-rows: repeat (4, 1fr);
+    }
+
+    .promosConSem {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .textoCent {
+        margin: 20px;
+    }
+
+    img {
+        width: 80%;
+        height: auto;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+}
+
+/*RESPONSIVE CDS*/
+@media screen and (max-width: 1024px) {
+    .gridCds {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 0, 2fr);
+    }
+
+    .botonComprar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .botonComprar div {
+        width: 330px;
+        height: 330px;
+        border: 2px;
+        margin: 10px;
+    }
+
+}
+
+/*CELULAR*/
+@media screen and (max-width: 500px) {
+    .gridCds {
+        display: grid;
+        grid-template-columns: 1 fr 1 fr;
+        grid-template-rows: 1fr,0fr,1fr,1fr,1fr;
+    }
+
+    .tamañoFuente {
+        font-size: 15px;
+    }
+
+    .responsiveNav{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+
+}
+
+/* TRANCISIONES*/
+/*Index: imagenes de los cds*/
+
+.imagencd img {
+    width: 300px;
+    transition: width 1s;
+}
+
+.imagencd img:hover {
+    width: 320px;
+}
+
+/*Cds: imagen de catalogo cd*/
+.animCD {
+    transition: all 0.4s ease;
+}
+.animCD:hover {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+
+/*bootstrap/*
+/*Index*/
+.controlCarousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    width: 50%;
+}
+
+.menuPincipalN {
+    height: 50px;
+    color: #000000;
+    background-color: #000000;
+    width: 100%;
+    font-size: 18px;
+}
+
+.menuPincipalN a:hover {
+    color: #ffffff;
+}
+
+.menuPincipalN a:visited {
+    color: #ffffff;
+}
+
+/*envios*/
+.tablaEnvios {
+    text-align: center;
+}
+
+.tablaEnvios th {
+    color: #00cbf3;
+    background-color: #000000;
+}
+
+/*contacto*/
+.contactoVarible {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+.botonEnviarContacto {
+    background-color: #00cbf3;
+    color: #000000;
+    margin: 10px 0px;
+}
+
+.botonEnviarContacto button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.botonMailC {
+    width: 50px;
+}
+
+.TextoPC {
+    text-align: center;
+}
+
+/*promos*/
+.textoCent {
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/*novedades*/
+.botonesNovedades {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.botonNov {
+    margin: 10px;
+    background-color: #000000;
+    color: #00cbf3;
+}
+
+.botonNow a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+}
+
+.botonNov a:visited {
+    color: #00cbf3;
+}
+
+.botonNov a:hover {
+    color: #ffffff;
+}
+
+/*CDS*/
+.cdsLista {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+
+    padding: 0px 50px 0px 50px;
+}
+
+.propCds {
+    text-align: center;
+    font-weight: 500;
+    background-color: #000000;
+    color: #ffffff;
+    margin:20px;
+}

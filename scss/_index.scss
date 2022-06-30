@@ -1,0 +1,228 @@
+/*CSS INDEX*/
+.menuYLogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.3fr 2.4fr 0.1fr 0.1fr;
+    gap: 9px 9px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: "logo logo logo logo" 
+    "menuP menuP menuP menuP" 
+    "mainI mainI mainI mainI" 
+    "mainI mainI mainI mainI" 
+    "mainI mainI mainI mainI" 
+    "footerT footerT footerT footerT";
+}
+
+.logo {
+    grid-area: logo;
+    width: 100%;
+}
+
+.centrarImg {
+    text-align: center; 
+}
+
+.menuP {
+    grid-area: menuP;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+div.container {
+    width: 96%;
+    max-width: 1022px;
+    margin: 0 auto;
+}
+
+.menuPincipalN {
+    height: 50px;
+    color: #000000;
+    background-color: #000000;
+    width: 100%;
+    font-size: 18px;
+
+a {
+    &:hover, &:visited {
+        color: #ffffff;
+    }
+}
+}
+
+.mainI {
+    grid-area: mainI;
+    width: 100%;
+}
+
+.carrousel {
+    grid-area: carrousel;
+}
+
+.h2T {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.discosTitulo {
+    grid-area: discosTitulo;
+    text-align: center;
+    background-color: #00cbf3;
+    color: #000000;
+    width: 100%;
+}
+
+.botonComprar {
+    background-color: #ffffff;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+div {
+    width: 300px;
+    height: 330px;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
+}
+}
+
+.cds {
+    grid-area: cds;
+    width: 100%;
+}
+
+.imagencd img {
+    width: 300px;
+    transition: width 1s;
+
+    &:hover {
+        width: 320px;
+}
+}
+
+.footerT {
+    grid-area: footerT;
+    background-color: #000000;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+a {
+    text-decoration: none;
+}
+}
+
+.tamañoFuente {
+    font-size: 15px;
+}
+
+
+
+/*RESPONSIVE INDEX*/
+
+/*TABLET*/
+@media screen and (max-width: 1024px) {
+    .menuYLogo {
+        display: grid;
+        grid-template-columns: repeat (2, 1fr);
+        grid-template-rows: repeat (3, 0, 2fr);
+        }
+    
+    .botonComprar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    
+    div {
+        width: 330px;
+        height: 330px;
+        border: 2px;
+        margin: 10px;
+    }
+    }
+    }
+    
+    /*CELULAR*/
+    @media screen and (max-width: 500px) {
+    .menuYLogo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0, 2fr 0, 2fr 0, 2fr 0, 2fr;
+        }
+    
+    .menu li {
+        display: list-item;
+        font-size: 15px;
+        color: #000000;
+        background-color: #ffffff;
+        width: 100%;
+    
+    a {
+        background-color: #ffffff;
+    }
+    
+    &:hover ul {
+        color: #000000;
+        background-color: #00cbf3;
+    }
+    }
+    
+    .h2T {
+        font-size: 20px;
+    }
+    
+    .botonComprar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    
+    div {
+        width: 330px;
+        height: 330px;
+        border: 2px;
+    }
+    }
+    
+    .tamañoFuente {
+        font-size: 15px;
+    }
+    
+    .responsiveNav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+    }
+    }
+    
