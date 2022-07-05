@@ -1,17 +1,17 @@
-const formRegistro = document.getElementById('formularioRegistro');
+// const formRegistro = document.getElementById('formularioRegistro');
 
-formRegistro.addEventListener('submit', (e)=> {
+// formRegistro.addEventListener('submit', (e)=> {
 
-    e.preventDefault();
-    const nombre = document.getElementById('nombres').value;
-    const apellido = document.getElementById('celular').value;
-    const telefono = document.getElementById('correo').value;
-    const email = document.getElementById('comentarios').value;
-});
+//     e.preventDefault();
+//     const nombre = document.getElementById('nombres').value;
+//     const apellido = document.getElementById('celular').value;
+//     const telefono = document.getElementById('correo').value;
+//     const email = document.getElementById('comentarios').value;
+// });
 
 const nombres = document.getElementById('nombres');
 
-nombres.addEventListener('blur', () => {
+nombres.addEventListener('input', () => {
 
     if(nombres.value.length > 0){
         

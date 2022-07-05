@@ -20,10 +20,10 @@ do {
         alert("Este usuario ha sido ocupado, por favor elija otro");
     }
 
-    newUser = prompt("Buenos días, ¿podrías indicarme tu nombre?");
+    newUser = prompt("¿me puedes recordar tu nombre?");
 } while (usuarios.includes(newUser));
 
-alert(newUser + " ha sido registrado exitosamente");
+alert("Gracias", + ' ' + newUser);
 
 
 //Funcion para que hasta que el usuario no ponga correctamente el cd no siga los pasos siguientes
@@ -33,7 +33,7 @@ const nombrarCdCorrecto = () => {
 }
 
 do {
-    disco = prompt("Muchas gracias" + ' ' + newUser + ' ' + "¿Que disco te gustaría comprar?: Amo, Death of a Bachelor,Demon Days,Happier than ever, Im with you, Manic, Plastic Hearts, Scaled and Icy, Stoney, The new Abnormal, Tickets to my downfall,Underclass Hero o todos");
+    disco = prompt(newUser + ' ' + "¿Que disco te gustaría comprar?: Amo, Death of a Bachelor,Demon Days,Happier than ever, Im with you, Manic, Plastic Hearts, Scaled and Icy, Stoney, The new Abnormal, Tickets to my downfall,Underclass Hero o todos");
 
     switch (disco) {
         case "Amo":
