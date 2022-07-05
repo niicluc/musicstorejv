@@ -11,7 +11,7 @@
 
 const nombres = document.getElementById('nombres');
 
-nombres.addEventListener('input', () => {
+nombres.addEventListener('blur', () => {
 
     if(nombres.value.length > 0){
         
@@ -56,13 +56,13 @@ correo.addEventListener('blur', () => {
         console.log("luce genial");
 
         const error = document.getElementById('errorCorreo');
-        error.innerHTML = '<h5 class="text-dark">Campo completo</h5>';
+        error.innerHTML = '<p>Campo completo</p>';
 
     }else {
         
         console.log("Correo Incorrecto");
         const error = document.getElementById('errorCorreo');
-        error.innerHTML = '<h5 class="text-danger">Por favor, revisa que el correo este bien</h5>';
+        error.innerHTML = '<p>Por favor, revisa que el correo este bien</p>';
     }
 });
 
