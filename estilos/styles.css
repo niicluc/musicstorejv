@@ -384,6 +384,10 @@ div.container {
   color: #ffffff;
   margin: 20px; }
 
+  .textoBienvenida{
+    color: #000000;
+  }
+
 .linkTex {
   text-align: center;
   text-decoration: none;

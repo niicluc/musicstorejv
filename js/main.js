@@ -25,6 +25,7 @@ do {
 
 alert(newUser + " ha sido registrado exitosamente");
 
+
 //Funcion para que hasta que el usuario no ponga correctamente el cd no siga los pasos siguientes
 const nombrarCdCorrecto = () => {
     let CorrectoDisco = Number(prompt("¿cuantos discos quieres?"));
@@ -111,6 +112,7 @@ do {
 } while (!verMas); // mientras verMas sea false sigo preguntando por el nombre del disco a comprar
 
 alert("¡Gracias por tu compra" + ' ' + newUser + ' ' + "el total es de $" + subTotal + ' ' + "(con iva incluido)" +' ' + "en unos instantes recibirás un mail con la confirmación");
+
 
 const artistas = [
     {nombre: "Bring me the horizon"},
