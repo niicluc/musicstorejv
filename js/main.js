@@ -129,4 +129,4 @@ const artistas = [
     {nombre: "Underclass Hero"},
     ];
     
-    console.log (artistas.some (artista => artiste.nombre === "Post Malone"));
+    console.log (artistas.some (artista => artista.nombre === "Post Malone"));
