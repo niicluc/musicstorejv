@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+
 /*CSS NOVEDADES*/
 .gridEnvios2 {
   /*es el del html novedades*/
@@ -324,6 +326,10 @@ div.container {
     height: 100px; } }
 
 /*CSS CDS*/
+.agregarCarrito{
+  background-color: #00cbf3;
+  color: #000000;
+}
 .gridCds {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -801,3 +807,55 @@ div.container {
     align-items: center;
     justify-content: center;
     height: 100px; } }
+
+/*estilo cards*/
+section{
+  display: flex;
+  width: 100%;
+  min-width: 350px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card{
+  width: 210px;
+  height: auto;
+  margin: 15px;
+  padding: 0.7em;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  background-color: #ffffff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+}
+.card h3{
+  margin: 0.5em 0em;
+}
+.card h4{
+  font-size: 0.875em;
+  margin: 0.5em 0em;
+  color: #00cbf3;
+  font-weight: normal;
+}
+
+.card .button{
+  width: 100%;
+  border: none;
+  padding: 0.7em;
+  background-color: #000000;
+  background-color: #00cbf3;
+  color: #ffffff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",;
+  margin: 0.5em 0em;
+}
+
+.card:hover{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
+
+.card img{
+  width: 100%;
+}

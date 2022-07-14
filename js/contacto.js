@@ -42,7 +42,7 @@ celular.addEventListener('blur', () => {
     }else {
         
         console.log("Celular Incorrecto");
-        const error = document.getElementById('errorNombre');
+        const error = document.getElementById('errorCelular');
         error.innerHTML = '<p>Debes escribir un numero de celular</p>';
     }
 });
@@ -67,3 +67,25 @@ correo.addEventListener('blur', () => {
 });
 
 
+
+//para enviar contacto y que se guarde
+let send = document.getElementById('botonEnviarContacto');
+send.addEventListener('click', (e) => {
+
+let name = document.getElementById('nombres').value;
+let mobile = document.getElementById('celular').value;
+let email = document.getElementById('correo').value;
+let comments = document.getElementById('comentarios').value;
+//validar que no esten vacias variables
+
+let user = {
+name: name,
+mobile:mobile,
+email:email,
+comments:comments
+}
+
+
+localStorage.setItem('user', JSON.stringify(user));
+
+})

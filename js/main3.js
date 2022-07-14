@@ -1,49 +1,67 @@
-let productos = [
-    {id: 1, nombre: "Amo", banda: "Bring me the horizon", cantidad: 1, precio: 5629},
-    {id: 2, nombre: "Death of a Bachelor", banda: "Panic at the disco", cantidad: 1, precio: 3880},
-    {id: 3, nombre: "Demon days", banda: "gorillaz", cantidad: 1, precio: 5800},
-    {id: 4, nombre: "Happier than ever", banda: "Billie elish", cantidad: 1, precio: 2200},
-    {id: 5, nombre: "Im with you", banda: "Red hot chili peppers", cantidad: 1, precio: 1500},
-    {id: 6, nombre: "Manic", banda: "Halsey", cantidad: 1, precio: 1695},
-    {id: 7, nombre: "Plastic hearts", banda: "Miley cyrus", cantidad: 1, precio: 3990},
-    {id: 8, nombre: "Scaled and icy", banda: "Twenty one pilots", cantidad: 1, precio: 2100},
-    {id: 9, nombre: "Stoney", banda: "Post malone", cantidad: 1, precio: 4959},
-    {id: 10, nombre: "The new abnormal", banda: "The strokes", cantidad: 1, precio: 4700},
-    {id: 11, nombre: "Tickets to my downfall", banda: "Machine Gun Kelly", cantidad: 1, precio: 5007},
-    {id: 12, nombre: "Underclass hero", banda: "Sum 41", cantidad: 1, precio: 6500},
+const Products = [
+    {id: 1, name: 'Amo', description: 'Bring me the horizon', cantidad: '1', price: '5629', image: './multimedia/im16.jpg'},
+    {id: 2, name: 'Death of a Bachelor', description: 'Panic at the disco', cantidad: '1', price: '3880', image: '../multimedia/im17.jpg'},
+    {id: 3, name: 'Demon days', description: 'gorillaz', cantidad: '1', price: '5800', image: '../multimedia/im18.jpg'},
+    {id: 4, name: 'Happier than ever', description: 'Billie elish', cantidad: '1', price: '2200', image: '../multimedia/im19.jpg'},
+    {id: 5, name: 'Im with you', description: 'Red hot chili peppers', cantidad: '1', price: '1500', image: '../multimedia/im20.jpg'},
+    {id: 6, name: 'Manic', description: 'Halsey', cantidad: '1', price: '1695', image: '../multimedia/im21.jpg'},
+    {id: 7, name: 'Plastic hearts', description: 'Miley cyrus', cantidad: '1', price: '3990', image: '../multimedia/im22.jpg'},
+    {id: 8, name: 'Scaled and icy', description: 'Twenty one pilots', cantidad: '1', price: '2100', image: '../multimedia/im23.jpg'},
+    {id: 9, name: 'Stoney', description: 'Post malone', cantidad: '1', price: '4959', image: '../multimedia/im24.jpg'},
+    {id: 10, name: 'The new abnormal', description: 'The strokes', cantidad: '1', price: '4700', image: '../multimedia/im25.jpg'},
+    {id: 11, name: 'Tickets to my downfall', description: 'Machine Gun Kelly', cantidad: '1', price: '5007', image: '../multimedia/im26.jpg'},
+    {id: 12, name: 'Underclass hero', description: 'Sum 41', cantidad: '1', price: '6500', image: '../multimedia/im27.jpg'},
     ]
 
-// Array para que no se repita el nombre de usuario
-const usuarios = ["Nic", "Nicky", "Niic"];
 
-console.log(usuarios.indexOf("Nic"));  
-console.log(usuarios.indexOf("Nicky"));
-console.log(usuarios.indexOf("Niic"));
+//cards de los cds
+const loadEvents = () =>
+{
+    let buttons = document.getElementsByClassName('add'); 
+    console.log(buttons); 
+    for (const element of buttons)
+    {
+        element.addEventListener('click', ()=>{
+            console.log(element.id); 
+            alert("Has selecciona el disco " + element.id);
+        });
+    }
+}
 
-let newUser = "";
+const loadProducts = (prods) =>
+{   
+    let container = document.getElementsByClassName('container'); 
+    
+    for (const element of prods)
+    {   
+        let div = document.createElement("div"); 
+        div.setAttribute("class", "card"); 
+        div.innerHTML = 
+        ` 
+            <img src="${element.image}" alt="${element.description}">
+            <h3>$${element.price}</h3>
+            <h4>${element.name}</h4>
+            <button id="${element.id}" class='button add'>Agregar</button> 
+        `;
 
-do {
-
-    if (newUser != "") {
-        alert("Este usuario ha sido ocupado, por favor elija otro");
+        container[0].appendChild(div);
     }
 
-    newUser = prompt("¿me puedes recordar tu nombre?");
-} while (usuarios.includes(newUser));
+    loadEvents();
+}
 
-alert("Gracias", + ' ' + newUser);
+loadProducts(Products); 
 
-
+//preguntas de carrito
 const carrito = []
 
 //Inicio de compra:
 
-let compra = prompt(newUser + "," + '' + "¿deseas comprar algún cd?");
+let compra = prompt("¿deseas comprar algún cd?");
 
 if(compra === null){
     alert("No has seleccionado nigún disco :(");
 
-    return; //Asi no se rompe
 }
 
 if (compra === "si"){
@@ -70,13 +88,10 @@ if (compra === "si"){
 
         `)
 
-        if(escogerCd === null){
-            return;
-        }
 
         if (escogerCd === "no"){
 
-            mensaje("Gracias por visitar Discos Wes" + ''+ newUser+ ","+''+ "hasta pronto")
+            mensaje("Gracias por visitar Discos Wes" +''+ "hasta pronto")
             break;
         }
         agregarDiscos(parseInt(escogerCd)); //aca llame a la funcion de agregar al carrito
@@ -87,7 +102,7 @@ if (compra === "si"){
 
 }else {
 
-    mensaje("Gracias por visitar Discos Wes" + ''+ newUser+ ","+''+ "hasta pronto")
+    mensaje("Gracias por visitar Discos Wes" + "hasta pronto")
 
 }
 
@@ -115,10 +130,10 @@ function compraTotal(){
         total = total + producto.cantidad * producto.precio;
     })
 
-    return total;
+    //return total;
 }
 
-//funcion para filtrar por banda ver foto de la primera preentrega. Me quede en el zoom 1:02
+
 //funcion para filtrar por cd
 /*const arrayCdArtistas = [];
 
@@ -129,3 +144,4 @@ const agregarDisco = (disco) => {
             //aca encuentra el cd
         }
 }*/
+
