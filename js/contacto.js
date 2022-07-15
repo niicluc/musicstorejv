@@ -1,14 +1,3 @@
-// const formRegistro = document.getElementById('formularioRegistro');
-
-// formRegistro.addEventListener('submit', (e)=> {
-
-//     e.preventDefault();
-//     const nombre = document.getElementById('nombres').value;
-//     const apellido = document.getElementById('celular').value;
-//     const telefono = document.getElementById('correo').value;
-//     const email = document.getElementById('comentarios').value;
-// });
-
 const nombres = document.getElementById('nombres');
 
 nombres.addEventListener('blur', () => {
@@ -76,9 +65,10 @@ let name = document.getElementById('nombres').value;
 let mobile = document.getElementById('celular').value;
 let email = document.getElementById('correo').value;
 let comments = document.getElementById('comentarios').value;
+
 //validar que no esten vacias variables
 
-let user = {
+let usuario = {
 name: name,
 mobile:mobile,
 email:email,
@@ -86,6 +76,17 @@ comments:comments
 }
 
 
-localStorage.setItem('user', JSON.stringify(user));
+let usuarios = JSON.parse(localStorage.getItem('usuario'));
 
-})
+if (!usuarios)
+{
+    let array = [];
+    array.push(usuario);
+    localStorage.setItem('usuario', JSON.stringify(array));
+    return;
+}
+usuarios.push(usuario);
+localStorage.setItem('usuario', JSON.stringify(usuarios));
+
+});
+//siempre usar stringify para que queden pasados de manera correcta

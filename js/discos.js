@@ -1,16 +1,16 @@
 const Products = [
-    {id: 1, name: 'Amo', description: 'Bring me the horizon', cantidad: '1', price: '5629', image: './multimedia/im16.jpg'},
-    {id: 2, name: 'Death of a Bachelor', description: 'Panic at the disco', cantidad: '1', price: '3880', image: '../multimedia/im17.jpg'},
-    {id: 3, name: 'Demon days', description: 'gorillaz', cantidad: '1', price: '5800', image: '../multimedia/im18.jpg'},
-    {id: 4, name: 'Happier than ever', description: 'Billie elish', cantidad: '1', price: '2200', image: '../multimedia/im19.jpg'},
-    {id: 5, name: 'Im with you', description: 'Red hot chili peppers', cantidad: '1', price: '1500', image: '../multimedia/im20.jpg'},
-    {id: 6, name: 'Manic', description: 'Halsey', cantidad: '1', price: '1695', image: '../multimedia/im21.jpg'},
-    {id: 7, name: 'Plastic hearts', description: 'Miley cyrus', cantidad: '1', price: '3990', image: '../multimedia/im22.jpg'},
-    {id: 8, name: 'Scaled and icy', description: 'Twenty one pilots', cantidad: '1', price: '2100', image: '../multimedia/im23.jpg'},
-    {id: 9, name: 'Stoney', description: 'Post malone', cantidad: '1', price: '4959', image: '../multimedia/im24.jpg'},
-    {id: 10, name: 'The new abnormal', description: 'The strokes', cantidad: '1', price: '4700', image: '../multimedia/im25.jpg'},
-    {id: 11, name: 'Tickets to my downfall', description: 'Machine Gun Kelly', cantidad: '1', price: '5007', image: '../multimedia/im26.jpg'},
-    {id: 12, name: 'Underclass hero', description: 'Sum 41', cantidad: '1', price: '6500', image: '../multimedia/im27.jpg'},
+    {id: 1, name: 'Amo', cd: 'Bring me the horizon', cantidad: '1', price: '5629', image: '../multimedia/im16.jpg'},
+    {id: 2, name: 'Death of a Bachelor', cd: 'Panic at the disco', cantidad: '1', price: '3880', image: '../multimedia/im17.jpg'},
+    {id: 3, name: 'Demon days', cd: 'gorillaz', cantidad: '1', price: '5800', image: '../multimedia/im18.jpg'},
+    {id: 4, name: 'Happier than ever', cd: 'Billie elish', cantidad: '1', price: '2200', image: '../multimedia/im19.jpg'},
+    {id: 5, name: 'Im with you', cd: 'Red hot chili peppers', cantidad: '1', price: '1500', image: '../multimedia/im20.jpg'},
+    {id: 6, name: 'Manic', cd: 'Halsey', cantidad: '1', price: '1695', image: '../multimedia/im21.jpg'},
+    {id: 7, name: 'Plastic hearts', cd: 'Miley cyrus', cantidad: '1', price: '3990', image: '../multimedia/im22.jpg'},
+    {id: 8, name: 'Scaled and icy', cd: 'Twenty one pilots', cantidad: '1', price: '2100', image: '../multimedia/im23.jpg'},
+    {id: 9, name: 'Stoney', cd: 'Post malone', cantidad: '1', price: '4959', image: '../multimedia/im24.jpg'},
+    {id: 10, name: 'The new abnormal', cd: 'The strokes', cantidad: '1', price: '4700', image: '../multimedia/im25.jpg'},
+    {id: 11, name: 'Tickets to my downfall', cd: 'Machine Gun Kelly', cantidad: '1', price: '5007', image: '../multimedia/im26.jpg'},
+    {id: 12, name: 'Underclass hero', cd: 'Sum 41', cantidad: '1', price: '6500', image: '../multimedia/im27.jpg'},
     ]
 
 
@@ -30,7 +30,7 @@ const loadEvents = () =>
 
 const loadProducts = (prods) =>
 {   
-    let container = document.getElementsByClassName('container'); 
+    let estiloCd = document.getElementsByClassName('estiloCd'); 
     
     for (const element of prods)
     {   
@@ -38,13 +38,13 @@ const loadProducts = (prods) =>
         div.setAttribute("class", "card"); 
         div.innerHTML = 
         ` 
-            <img src="${element.image}" alt="${element.description}">
+            <img src="${element.image}" alt="${element.cd}">
             <h3>$${element.price}</h3>
             <h4>${element.name}</h4>
             <button id="${element.id}" class='button add'>Agregar</button> 
         `;
 
-        container[0].appendChild(div);
+        estiloCd[0].appendChild(div);
     }
 
     loadEvents();
