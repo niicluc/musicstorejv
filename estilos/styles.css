@@ -834,9 +834,16 @@ section{
   margin: 0.5em 0em;
 }
 .card h4{
-  font-size: 0.875em;
+  font-size: 0.975em;
   margin: 0.5em 0em;
   color: #00cbf3;
+  font-weight:bold;
+}
+
+.card h5{
+  font-size: 0.775em;
+  margin: 0.5em 0em;
+  color: #98bfc7;
   font-weight: normal;
 }
 
@@ -851,11 +858,9 @@ section{
   margin: 0.5em 0em;
 }
 
-.card:hover{
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%); }
-
-
 .card img{
   width: 100%;
 }
+.card img:hover{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }

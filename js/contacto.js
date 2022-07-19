@@ -20,21 +20,11 @@ nombres.addEventListener('blur', () => {
 const celular = document.getElementById('celular');
 
 celular.addEventListener('blur', () => {
+    const error = document.getElementById('errorCelular');
+    celular.value.length > 0 ? (error.innerHTML = '<p>Campo completo</p>') : (error.innerHtml = '<p>Debes escribir un numero de celular</p>');
+    
+)}
 
-    if(celular.value.length > 0){
-        
-        console.log("Excelente");
-
-        const error = document.getElementById('errorCelular');
-        error.innerHTML = '<p>Campo completo</p>';
-
-    }else {
-        
-        console.log("Celular Incorrecto");
-        const error = document.getElementById('errorCelular');
-        error.innerHTML = '<p>Debes escribir un numero de celular</p>';
-    }
-});
 
 const correo = document.getElementById('correo');
 
