@@ -1,30 +1,16 @@
 const nombres = document.getElementById('nombres');
 
 nombres.addEventListener('blur', () => {
-
-    if(nombres.value.length > 0){
-        
-        console.log("Tienes un nombre genial");
-
-        const error = document.getElementById('errorNombre');
-        error.innerHTML = '<p>Campo completo</p>';
-
-    }else {
-        
-        console.log("Nombre Incorrecto");
-        const error = document.getElementById('errorNombre');
-        error.innerHTML = '<p>Debes escribir un nombre</p>';
-    }
-});
+    const errorN = document.getElementById('errorNombre');
+    nombres.value.length > 0 ? (errorN.innerHTML = '<p>Campo completo</p>') : (errorN.innerHTML = '<p>Debes escribir un nombre</p>');
+})
 
 const celular = document.getElementById('celular');
 
 celular.addEventListener('blur', () => {
-    const error = document.getElementById('errorCelular');
-    celular.value.length > 0 ? (error.innerHTML = '<p>Campo completo</p>') : (error.innerHtml = '<p>Debes escribir un numero de celular</p>');
-    
-)}
-
+    const errorC = document.getElementById('errorCelular');
+    celular.value.length > 0 ? (errorC.innerHTML = '<p>Campo completo</p>') : (errorC.innerHTML = '<p>Debes escribir un numero de celular</p>');
+})
 
 const correo = document.getElementById('correo');
 
