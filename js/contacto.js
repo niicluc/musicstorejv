@@ -66,3 +66,14 @@ localStorage.setItem('usuario', JSON.stringify(usuarios));
 
 });
 //siempre usar stringify para que queden pasados de manera correcta
+
+//sweet alert en boton enviar
+const btn = document.getElementById("botonEnviarContacto");btn.addEventListener("click", () => {
+    swal({title: '¡GRACIAS!',
+    text: 'Tu consulta ha sido enviada exitosamente',
+    icon: 'success',
+    buttons: false,
+    timer: 1500
+
+})
+})

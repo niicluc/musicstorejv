@@ -23,7 +23,15 @@ const loadEvents = () =>
     {
         element.addEventListener('click', ()=>{
             console.log(element.id); 
-            alert("Has selecciona el disco " + element.id);
+            Toastify({
+                text: ("Has seleccionado el disco " + element.id),
+                duration: 4000,
+                gravity: "bottom",
+                position: "right",
+                backgroundColor: "#000000",
+                stopOnFocus: true,
+                close: true,
+            }).showToast();
         });
     }
 }
