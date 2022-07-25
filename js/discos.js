@@ -1,18 +1,3 @@
-const Products = [
-    {id: 1, name: 'Amo', cd: 'Bring me the horizon', cantidad: '1', price: '5629', image: '../multimedia/im16.jpg'},
-    {id: 2, name: 'Death of a Bachelor', cd: 'Panic at the disco', cantidad: '1', price: '3880', image: '../multimedia/im17.jpg'},
-    {id: 3, name: 'Demon days', cd: 'Gorillaz', cantidad: '1', price: '5800', image: '../multimedia/im18.jpg'},
-    {id: 4, name: 'Happier than ever', cd: 'Billie Elish', cantidad: '1', price: '2200', image: '../multimedia/im19.jpg'},
-    {id: 5, name: 'Im with you', cd: 'Red hot chili peppers', cantidad: '1', price: '1500', image: '../multimedia/im20.jpg'},
-    {id: 6, name: 'Manic', cd: 'Halsey', cantidad: '1', price: '1695', image: '../multimedia/im21.jpg'},
-    {id: 7, name: 'Plastic hearts', cd: 'Miley Cyrus', cantidad: '1', price: '3990', image: '../multimedia/im22.jpg'},
-    {id: 8, name: 'Scaled and icy', cd: 'Twenty one pilots', cantidad: '1', price: '2100', image: '../multimedia/im23.jpg'},
-    {id: 9, name: 'Stoney', cd: 'Post Malone', cantidad: '1', price: '4959', image: '../multimedia/im24.jpg'},
-    {id: 10, name: 'The new abnormal', cd: 'The strokes', cantidad: '1', price: '4700', image: '../multimedia/im25.jpg'},
-    {id: 11, name: 'Tickets to my downfall', cd: 'Machine Gun Kelly', cantidad: '1', price: '5007', image: '../multimedia/im26.jpg'},
-    {id: 12, name: 'Underclass hero', cd: 'Sum 41', cantidad: '1', price: '6500', image: '../multimedia/im27.jpg'},
-    ]
-
 
 //cards de los cds
 const loadEvents = () =>
@@ -30,7 +15,6 @@ const loadEvents = () =>
                 position: "right",
                 backgroundColor: "#000000",
                 stopOnFocus: true,
-                close: true,
             }).showToast();
         });
     }
@@ -59,7 +43,14 @@ const loadProducts = (prods) =>
     loadEvents();
 }
 
-loadProducts(Products); 
+
+
+fetch('/data.json')
+.then((response) => response.json())
+.then((data) =>{
+loadProducts(data);
+});
+
 
 //preguntas de carrito
 const carrito = []
@@ -109,10 +100,6 @@ if (compra === "si"){
 
     let
 
-}else {
-
-    mensaje("Gracias por visitar Discos Wes" + "hasta pronto")
-
 }
 
 //funcion para agregar productos al carrito
@@ -142,15 +129,4 @@ function compraTotal(){
     //return total;
 }
 
-
-//funcion para filtrar por cd
-/*const arrayCdArtistas = [];
-
-const agregarDisco = (disco) => {
-    const cd = arrayCdArtistas.find(element => element.cd == disco);
-    if (cd != -1)
-        {
-            //aca encuentra el cd
-        }
-}*/
 
