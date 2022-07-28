@@ -864,3 +864,13 @@ section{
 .card img:hover{
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%); }
+
+  .botonCarrito{
+    width: 15%;
+    border: none;
+    padding: 0.7em;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",;
+    margin: 0.5em 0em;
+  }

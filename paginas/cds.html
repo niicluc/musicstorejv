@@ -17,6 +17,7 @@
     </script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://kit.fontawesome.com/e2abe77229.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../estilos/styles.css">
     <link rel="icon" href="../multimedia/favicon.ico">
 </head>
@@ -36,7 +37,7 @@
                 <div class="container menuPincipalN">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="novedades.html">Novedades</a>
+                            <a class="nav-link">Novedades</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link">Promos</a>
@@ -56,11 +57,22 @@
         </header>
 
 
-        <main class="mainCD">
-            <section class="estiloCd"></section>
-        </main>
+        <main class="mainCD estiloCd">
+            <div class="d-flex justify-content-center bd-highlight mb-2">
+            <button type="button" class="botonCarrito" id="botonCarrito" >  Carrito <i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        <section class="estiloCd" id="estiloCd"></section>
+    </main>
+
+    <div class="carritoContendor">
+        <div id="carrtioGeneral">
+        <p class="costoProducto"> Precio total: $ <span id="precioTotal">0</span></p>
+        <button type="button" id="vaciarCarro" class="vaciarCarro">Vaciar carrito <i class="fa-solid fa-trash-can"></i></button>
+        </div>
+</div>
 
 <!--footer-->
+
 <footer id="footer" class="footerT">
     <p class="tamañoFuente">
         <a href="../index.html"> Home |</a>
@@ -72,9 +84,10 @@
 </footer>
 
 
+
     </div>
 
-    <script src="../js/discos.js"></script>
+    <script src="../js/app.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
