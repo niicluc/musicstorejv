@@ -25,8 +25,139 @@ vaciarCarroBoton.addEventListener('click', () => {
     actualizarCarro () ;
 });
 
+// [Mau] esto despues te conviene traertelo de un archivo json local
+let stockCds = [
+
+    {
+        id: 1,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 2,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 3,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 4,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 5,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 6,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 7,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 8,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 9,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 10,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 11,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+
+    {
+        id: 12,
+        name: "Amo", 
+        cd: 'Bring me the horizon', 
+        cantidad: 1,
+        price: 5629, 
+        image: '../multimedia/im16.jpg'
+    },
+]
+
 
 //Card
+const loadEvents = () =>
+{
+    let buttons = document.getElementsByClassName('add'); 
+    console.log(buttons); 
+    for (const element of buttons)
+    {
+        element.addEventListener('click', ()=>{
+            console.log(element.id); 
+            Toastify({
+                text: ("Has seleccionado el disco " + element.id),
+                duration: 4000,
+                gravity: "bottom",
+                position: "right",
+                backgroundColor: "#000000",
+                stopOnFocus: true,
+            }).showToast();
+        });
+    }
+}
 
 stockCds.forEach((element) => {
     const div = document.createElement("div"); 
@@ -41,8 +172,7 @@ stockCds.forEach((element) => {
     `;
 
     contenedorCds.appendChild(div)
-
-    const boton = document.getElementById("${element.id}");
+    const boton = document.getElementById(element.id); // [Mau] aca en lugar de la plantilla literal le tiras diractamente el id
 
     boton.addEventListener('click', () => {
         agregarCarrito(element.id)
@@ -56,20 +186,22 @@ const agregarCarrito = (cdId) => {
 
     // Para evitar una repetición en lista cuando agrego un mismo producto
     const productoExistente = carrito.some(element => element.id === cdId)
-    if (productoExistente) {
-        const element = carrito.map (element => {
-            if (element.id === cdId) {
+    if (productoExistente)
+    {
+        carrito.map (element => {
+            if (element.id == cdId) {
                 element.cantidad++
             }
-        })
-    } else {
-
-
-    const item = stockCds.find ((element) => element.id === cdId);
-    carrito.push(item);
-    console.log(carrito)
-}
-actualizarCarro();
+        });
+        console.log('nuevo carrito: ' , carrito)
+    } 
+    else
+    {
+        const item = stockCds.find ((element) => element.id === cdId);
+        carrito.push(item);
+        console.log(carrito)
+    }
+    actualizarCarro();
 };
 
 //funcion para eliminar productos del carrito
@@ -83,10 +215,14 @@ const eliminarCarro = (cdId) => {
 
 //funcion para actualizar carrito y que por cada id se cree un div con el elemento
 
-const actualizarCarro = () => {
-contenedorCds.innerHTML = " "
+const actualizarCarro = () => 
+{
+    //contenedorCds.innerHTML = " " // [Mau] Ojo aca, que cuando le haces un inner html a contenedorCds sacas tambien las cards de los productos :o
+    // [Mau] lo que deberias hacer eso solo borrar el carrito para volverlo a cargar (el div del carrito)
+    // ahora que lo comente vas a ver que se agregan muchos items , pero por lo menos no se borran los productos ;D
 
-    carrito.forEach((producto) => {
+
+    carrito.forEach((element) => { 
         const div = document.createElement("div"); 
         div.innerHTML = 
         `
