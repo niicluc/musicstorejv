@@ -139,26 +139,6 @@ let stockCds = [
 
 
 //Card
-const loadEvents = () =>
-{
-    let buttons = document.getElementsByClassName('add'); 
-    console.log(buttons); 
-    for (const element of buttons)
-    {
-        element.addEventListener('click', ()=>{
-            console.log(element.id); 
-            Toastify({
-                text: ("Has seleccionado el disco " + element.id),
-                duration: 4000,
-                gravity: "bottom",
-                position: "right",
-                backgroundColor: "#000000",
-                stopOnFocus: true,
-            }).showToast();
-        });
-    }
-}
-
 stockCds.forEach((element) => {
     const div = document.createElement("div"); 
     div.setAttribute("class", "card"); 
@@ -179,6 +159,14 @@ stockCds.forEach((element) => {
     })
 
 })
+
+//Fetch:
+// fetch('/data.json')
+// .then((response) => response.json())
+// .then((data) =>{
+// loadProducts(data);
+// });
+
 
 //funcion de agregar al carrito
 
