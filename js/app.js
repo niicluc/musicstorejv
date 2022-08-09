@@ -50,7 +50,6 @@ const eliminarDelCarrito = (cdId) => {
     const indice = carrito.indexOf(item);
     carrito.splice(indice, 1);
     actualizarCarro();
-    console.log(carrito)
 }
 
 //Local Storage: Get Item
@@ -114,11 +113,9 @@ getData();
 const loadEvents = () =>
 {
     let buttons = document.getElementsByClassName('add'); 
-    console.log(buttons); 
     for (const element of buttons)
     {
         element.addEventListener('click', ()=>{
-            console.log(element.id); 
             Toastify({
                 text: ("Has seleccionado el disco " + element.id),
                 duration: 2000,
@@ -166,13 +163,11 @@ const agregarCarrito = (cdId) => {
                 element.cantidad++
             }
         });
-        console.log('nuevo carrito: ' , carrito)
     } 
     else
     {
         const item = stockCds.find ((element) => element.id === cdId);
         carrito.push(item);
-        console.log(carrito)
     }
     actualizarCarro();
 };

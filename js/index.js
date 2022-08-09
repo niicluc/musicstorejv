@@ -1,10 +1,6 @@
 // Array para que no se repita el nombre de usuario
 const usuarios = ["Nic", "Nicky", "Niic"];
 
-console.log(usuarios.indexOf("Nic"));  
-console.log(usuarios.indexOf("Nicky"));
-console.log(usuarios.indexOf("Niic"));
-
 let newUser = "";
 
 do {
@@ -20,7 +16,6 @@ alert(newUser + " ha sido registrado exitosamente");
 
 //Bienvenida personalizada
 let bienvenida= document.getElementById("bienvenida")
-console.log (bienvenida.innerText)
+
 
 bienvenida.innerText = ("Buenas tardes" + ' '+ newUser);
-console.log (bienvenida.innerText)

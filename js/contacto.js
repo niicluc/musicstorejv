@@ -17,15 +17,11 @@ const correo = document.getElementById('correo');
 correo.addEventListener('blur', () => {
 
     if(correo.value.length > 0 && correo.value.includes('@') && correo.value.includes('.')){
-        
-        console.log("luce genial");
 
         const error = document.getElementById('errorCorreo');
         error.innerHTML = '<p>Campo completo</p>';
 
     }else {
-        
-        console.log("Correo Incorrecto");
         const error = document.getElementById('errorCorreo');
         error.innerHTML = '<p>Por favor, revisa que el correo este bien</p>';
     }
