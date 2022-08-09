@@ -1,177 +1,162 @@
 const contenedorCds = document.getElementById('estiloCd');  //vairable para crear las cards de productos
-
-const contenedorCarro = document.getElementById('carrtioGeneral'); //variable para contenedor del carro
-
+const contenedorCarro = document.getElementById('carritoGeneral'); //variable para contenedor del carro
 const vaciarCarroBoton = document.getElementById('vaciarCarro'); //variable para que vacie el carro
-
-const costoTotal = document.getElementById('precioTotal'); //variable para que quede el costo total en el carro
-
+const precioTotal = document.getElementById('precioTotal') //variable para que quede el costo total en el carro
+const botonCarrito = document.getElementById('botonCarrito'); //variable para que quede el costo total en el carro
+const numeroCarrito = document.getElementById('contadorCarrito'); //para que se visualice el numero de cds agregados
 
 let carrito = [] //variable para agregar productos al carrito
 
-//Local Storage: Get Item
+//funcion para actualizar carrito y que por cada id se cree un div con el elemento
+const actualizarCarro = () => 
+{
+    if(carrito)
+    {
+        let contenedorCarrito = document.getElementById('contenedorCarrito');
+        let carritoGeneral = document.getElementById('carritoGeneral');
+        if(carritoGeneral)
+        {
+            carritoGeneral.parentNode.removeChild(carritoGeneral);
+        }
+        const generalCart = document.createElement('div'); 
+        generalCart.setAttribute('id','carritoGeneral');
+        generalCart.setAttribute('class','carritoGeneral');
+        carrito.forEach((element) => { 
+            const div = document.createElement("div"); 
+            div.setAttribute('class','carritoItem');
+            div.innerHTML = 
+            `
+            <img src="${element.image}" alt="${element.cd}">
+            <p>${element.name}</p>
+            <p>Precio:$${element.price}</p>
+            <p>Cantidad: <span id="cantidad">${element.cantidad}</span></p>
+            <button onclick = "eliminarDelCarrito(${element.id})" class="eliminarB"><i class="fa-solid fa-xmark"></i></i></button>
+            `;
+            generalCart.appendChild(div)
+        });
 
+//Local Storage: Set Item
+localStorage.setItem('carrito', JSON.stringify(carrito));
+
+contenedorCarrito.appendChild(generalCart);
+
+precioTotal.innerText = carrito.reduce ((acc, element) => acc + element.cantidad * element.price, 0) //acumula el precio para que salga el total
+    }
+};
+
+//Eliminar producto del carro
+const eliminarDelCarrito = (cdId) => {
+    const item = carrito.find ((element) => element.id === cdId );
+    const indice = carrito.indexOf(item);
+    carrito.splice(indice, 1);
+    actualizarCarro();
+    console.log(carrito)
+}
+
+//Local Storage: Get Item
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')) {
         carrito = JSON.parse(localStorage.getItem('carrito'))
-        actualizarCarro ();
+        actualizarCarro();
     }
 });
 
-//Vaciar el carrito por completo
 
+//Vaciar carrito
 vaciarCarroBoton.addEventListener('click', () => {
     carrito.length = 0;
-    actualizarCarro () ;
+    actualizarCarro();
 });
 
-// [Mau] esto despues te conviene traertelo de un archivo json local
-let stockCds = [
 
+//sweet alert vaciar carro
+const btnVaciar = document.getElementById("vaciarCarro");
+btnVaciar.addEventListener("click", () => {
+    swal({
+        title: '¿Estas seguro que deseas vaciar el carrito?',
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+    }).then( respuesta => {
+        if (respuesta) {
+            swal({
+                title: '¡Productos eliminados!',
+                text: 'El carrito ha sido vaciado con exito',
+                icon: 'success',
+                buttons: false,
+                timer: 2000,
+            })
+        }
+    })
+})
+
+
+//Fetch:
+const stockCds = [];
+const getData = async () =>
+{
+    try
+    {   
+        const response = await fetch('/data.json');
+        const data = await response.json();
+        stockCds.push(...data);
+        loadProducts(data);
+    }
+    catch(error)
     {
-        id: 1,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
+        console.log(error);
+    }
+}
 
+getData();
+
+//Toastify
+const loadEvents = () =>
+{
+    let buttons = document.getElementsByClassName('add'); 
+    console.log(buttons); 
+    for (const element of buttons)
     {
-        id: 2,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 3,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 4,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 5,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 6,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 7,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 8,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 9,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 10,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 11,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-
-    {
-        id: 12,
-        name: "Amo", 
-        cd: 'Bring me the horizon', 
-        cantidad: 1,
-        price: 5629, 
-        image: '../multimedia/im16.jpg'
-    },
-]
-
+        element.addEventListener('click', ()=>{
+            console.log(element.id); 
+            Toastify({
+                text: ("Has seleccionado el disco " + element.id),
+                duration: 2000,
+                gravity: "bottom",
+                position: "right",
+                backgroundColor: "#000000",
+                stopOnFocus: true,
+            }).showToast();
+        });
+    }
+}
 
 //Card
-stockCds.forEach((element) => {
+const loadProducts = (data) =>
+{
+    data.forEach((element) => {
     const div = document.createElement("div"); 
     div.setAttribute("class", "card"); 
     div.innerHTML = 
     ` 
         <img src="${element.image}" alt="${element.cd}">
-        <h3>$${element.price}</h3>
+        <h3 class="precioProducto">$${element.price}</h3>
         <h4>${element.name}</h4>
         <h5>${element.cd}</h5>
         <button id="${element.id}" class='button add'>Agregar</button> 
     `;
-
+    
     contenedorCds.appendChild(div)
-    const boton = document.getElementById(element.id); // [Mau] aca en lugar de la plantilla literal le tiras diractamente el id
-
+    const boton = document.getElementById(element.id);
     boton.addEventListener('click', () => {
         agregarCarrito(element.id)
-    })
-
-})
-
-//Fetch:
-// fetch('/data.json')
-// .then((response) => response.json())
-// .then((data) =>{
-// loadProducts(data);
-// });
-
+        });
+    });
+    loadEvents();
+}
 
 //funcion de agregar al carrito
-
 const agregarCarrito = (cdId) => {
-
     // Para evitar una repetición en lista cuando agrego un mismo producto
     const productoExistente = carrito.some(element => element.id === cdId)
     if (productoExistente)
@@ -192,41 +177,20 @@ const agregarCarrito = (cdId) => {
     actualizarCarro();
 };
 
-//funcion para eliminar productos del carrito
+//para que se visualice
+numeroCarrito.textContent = carrito.length ;
 
-const eliminarCarro = (cdId) => {
-    const item = carrito.find ((element) => element.id === cdId );
-    const indice = carrito.indexOf(item);
-    carrito.splice(indice, 1);
-    actualizarCarro();
-}
-
-//funcion para actualizar carrito y que por cada id se cree un div con el elemento
-
-const actualizarCarro = () => 
-{
-    //contenedorCds.innerHTML = " " // [Mau] Ojo aca, que cuando le haces un inner html a contenedorCds sacas tambien las cards de los productos :o
-    // [Mau] lo que deberias hacer eso solo borrar el carrito para volverlo a cargar (el div del carrito)
-    // ahora que lo comente vas a ver que se agregan muchos items , pero por lo menos no se borran los productos ;D
+//Sweet Alert finalizar compra
+const btn = document.getElementById("btnFinalizarCompra");btn.addEventListener("click", () => {
+    swal({title: 'GENIAL',
+    text: 'Tu compra ha sido gestionada con exito. Gracias por comprar en Music Store ¡hasta la próxima!',
+    icon: 'success',
+    buttons: false,
+    timer: 3000
+})
+})
 
 
-    carrito.forEach((element) => { 
-        const div = document.createElement("div"); 
-        div.innerHTML = 
-        `
-        <p>${element.name}</p>
-        <p>Precio:$${element.price}</p>
-        <p>Cantidad: <span id="cantidad">${element.cantidad}</span></p>
-        <button onclick = "eliminarDelCarrito(${element.id})"> <i class="fa-solid fa-delete-left"></i></button>
-        `;
-        contenedorCds.appendChild(div)
+// terminar compra => mostrar una alerta / vaciar carrito / recargas
 
-        //Local Storage: Set Item
-
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-
-    })
-
-    costoTotal.innerText = carrito.reduce ((acc, element) => acc + element.price, 0) //acumula el precio para que salga el total
-};
 

@@ -365,12 +365,13 @@ html {
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 190px;
+    height: 250px;
     background-color: #000000;
     color: #ffffff;
     border: 6px solid #00cbf3;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande","Lucida Sans", Arial, sans-serif;
     gap: 5px;
+    border-radius: 7px;
 }
 
 .imputEmail {
@@ -949,4 +950,14 @@ a:visited {
     background-color: #000000;
     color: #ffffff;
     margin:20px;
+}
+
+.btnSucripcion{
+    width: 150px;
+    height: 40px;
+    padding: 0.7em;
+    background-color: #00cbf3;
+    color: #ffffff;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",;
+    border-radius: 7px;
 }
