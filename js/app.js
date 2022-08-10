@@ -1,11 +1,10 @@
-const contenedorCds = document.getElementById('estiloCd');  //vairable para crear las cards de productos
-const contenedorCarro = document.getElementById('carritoGeneral'); //variable para contenedor del carro
-const vaciarCarroBoton = document.getElementById('vaciarCarro'); //variable para que vacie el carro
-const precioTotal = document.getElementById('precioTotal') //variable para que quede el costo total en el carro
-const botonCarrito = document.getElementById('botonCarrito'); //variable para que quede el costo total en el carro
+const contenedorCds = document.getElementById('estiloCd');
+const contenedorCarro = document.getElementById('carritoGeneral'); 
+const vaciarCarroBoton = document.getElementById('vaciarCarro'); 
+const precioTotal = document.getElementById('precioTotal') 
+const botonCarrito = document.getElementById('botonCarrito'); 
 
-
-let carrito = [] //variable para agregar productos al carrito
+let carrito = [] 
 
 //funcion para actualizar carrito y que por cada id se cree un div con el elemento
 const actualizarCarro = () => 
@@ -67,8 +66,6 @@ vaciarCarroBoton.addEventListener('click', () => {
     actualizarCarro();
 });
 
-
-//sweet alert vaciar carro
 const btnVaciar = document.getElementById("vaciarCarro");
 btnVaciar.addEventListener("click", () => {
     swal({
@@ -109,7 +106,6 @@ const getData = async () =>
 
 getData();
 
-//Toastify
 const loadEvents = () =>
 {
     let buttons = document.getElementsByClassName('add'); 
@@ -128,7 +124,7 @@ const loadEvents = () =>
     }
 }
 
-//Card
+//Card productos
 const loadProducts = (data) =>
 {
     data.forEach((element) => {
@@ -152,9 +148,8 @@ const loadProducts = (data) =>
     loadEvents();
 }
 
-//funcion de agregar al carrito
+//Funcion de agregar al carrito
 const agregarCarrito = (cdId) => {
-    // Para evitar una repetición en lista cuando agrego un mismo producto
     const productoExistente = carrito.some(element => element.id === cdId)
     if (productoExistente)
     {
@@ -172,7 +167,7 @@ const agregarCarrito = (cdId) => {
     actualizarCarro();
 };
 
-//Sweet Alert finalizar compra
+
 const btn = document.getElementById("btnFinalizarCompra");btn.addEventListener("click", () => {
     swal({title: 'GENIAL',
     text: 'Tu compra ha sido gestionada con exito. Gracias por comprar en Music Store ¡hasta la próxima!',
@@ -183,6 +178,5 @@ const btn = document.getElementById("btnFinalizarCompra");btn.addEventListener("
 })
 
 
-// terminar compra => mostrar una alerta / vaciar carrito / recargas
 
 

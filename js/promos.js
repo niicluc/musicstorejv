@@ -1,6 +1,6 @@
 const btn = document.getElementById("suscripcion");btn.addEventListener("click", () => {
-    swal({title: 'GENIAL',
-    text: 'Tu compra ha sido gestionada con exito. Gracias por comprar en Music Store ¡hasta la próxima!',
+    swal({title: 'SUSCRIPCIÓN EXITOSA',
+    text: 'Tu mail ha sido agregado, pronto te llegaran las nuevas novedades',
     icon: 'success',
     buttons: false,
     timer: 3000
@@ -22,14 +22,11 @@ correo.addEventListener('blur', () => {
     }
 });
 
-//para enviar contacto y que se guarde
+//Carga de correo suscripción
 let suscribirse = document.getElementById('suscripcion');
 suscribirse.addEventListener('click', (e) => {
 
 let email = document.getElementById('email').value;
-
-
-//validar que no esten vacias variables
 
 let usuario = {
 email:email,

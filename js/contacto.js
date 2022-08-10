@@ -29,7 +29,7 @@ correo.addEventListener('blur', () => {
 
 
 
-//para enviar contacto y que se guarde
+//Guardar datos
 let send = document.getElementById('botonEnviarContacto');
 send.addEventListener('click', (e) => {
 
@@ -38,7 +38,6 @@ let mobile = document.getElementById('celular').value;
 let email = document.getElementById('correo').value;
 let comments = document.getElementById('comentarios').value;
 
-//validar que no esten vacias variables
 
 let usuario = {
 name: name,
@@ -61,9 +60,8 @@ usuarios.push(usuario);
 localStorage.setItem('usuario', JSON.stringify(usuarios));
 
 });
-//siempre usar stringify para que queden pasados de manera correcta
 
-//sweet alert en boton enviar
+
 const btn = document.getElementById("botonEnviarContacto");btn.addEventListener("click", () => {
     swal({title: '¡GRACIAS!',
     text: 'Tu consulta ha sido enviada exitosamente',

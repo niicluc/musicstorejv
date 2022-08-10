@@ -1,4 +1,3 @@
-// Array para que no se repita el nombre de usuario
 const usuarios = ["Nic", "Nicky", "Niic"];
 
 let newUser = "";

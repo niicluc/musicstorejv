@@ -4,14 +4,22 @@
 Cualquier consulta que tengas sobre el proyecto puedes contactarte conmigo a esta dirección: nicolelucarelli56@gmail.com
  ¡Saludos!
 
+### Pre-requisitos 📋
+
+Por favor, asegurate de tener incorporado en tus archivos las siguientes bibliotecas:
+[Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/download/)
+[Font Awesome](https://fontawesome.com/docs/web/setup/get-started)
+[Sweet Alert](https://sweetalert.js.org/guides/)
+[Toastify](https://openbase.com/js/toastify-js/documentation)
 
 ## Construido con 🛠️
 
 *Bootstrap
 *CSS
+*Font Awesome
 *HTML
 *JSON 
-*JS 
+*Java Script
 *Sweet Alert 
 *Toastify
 

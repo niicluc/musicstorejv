@@ -55,7 +55,7 @@ localidad.addEventListener('blur', () => {
     localidad.value.length > 0 ? (errorLocalidad.innerHTML = '<p>Datos correctos</p>') : (errorLocalidad.innerHTML = '<p>No has completado tu localidad</p>');
 })
 
-//para enviar contacto y que se guarde
+//Guardar datos
 let enviar = document.getElementById('btnComprar');
 enviar.addEventListener('click', (e) => {
 
@@ -66,8 +66,6 @@ let country = document.getElementById('pais').value;
 let province = document.getElementById('provincia').value;
 let street = document.getElementById('domicilio').value;
 let notes = document.getElementById('notas').value;
-
-//validar que no esten vacias variables
 
 let usuarioCompra = {
 nameLastName: nameLastName,
@@ -93,7 +91,7 @@ localStorage.setItem('usuarioCompra', JSON.stringify(usuarios));
 
 });
 
-//sweet alert en boton comprar
+
 const btn = document.getElementById("btnComprar");btn.addEventListener("click", () => {
     swal({title: '¡GENIAL!',
     text: 'Tu compra ha sido realizada con exito, te enviaremos un mail con los pasos a seguir',
