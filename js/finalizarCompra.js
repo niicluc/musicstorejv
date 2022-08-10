@@ -65,6 +65,7 @@ let email = document.getElementById('correo').value;
 let country = document.getElementById('pais').value;
 let province = document.getElementById('provincia').value;
 let street = document.getElementById('domicilio').value;
+let location = document.getElementById('localidad').value;
 let notes = document.getElementById('notas').value;
 
 let usuarioCompra = {
@@ -74,6 +75,7 @@ email:email,
 country: country,
 province: province,
 street: street,
+location: location,
 notes: notes
 }
 
