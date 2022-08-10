@@ -3,7 +3,7 @@ const contenedorCarro = document.getElementById('carritoGeneral'); //variable pa
 const vaciarCarroBoton = document.getElementById('vaciarCarro'); //variable para que vacie el carro
 const precioTotal = document.getElementById('precioTotal') //variable para que quede el costo total en el carro
 const botonCarrito = document.getElementById('botonCarrito'); //variable para que quede el costo total en el carro
-const numeroCarrito = document.getElementById('contadorCarrito'); //para que se visualice el numero de cds agregados
+
 
 let carrito = [] //variable para agregar productos al carrito
 
@@ -171,9 +171,6 @@ const agregarCarrito = (cdId) => {
     }
     actualizarCarro();
 };
-
-//para que se visualice
-numeroCarrito.textContent = carrito.length ;
 
 //Sweet Alert finalizar compra
 const btn = document.getElementById("btnFinalizarCompra");btn.addEventListener("click", () => {

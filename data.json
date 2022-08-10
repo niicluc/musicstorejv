@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Amo", 
-        "cd": "Bring me the horizon", 
+        "cd": "Bring Me The Horizon", 
         "cantidad": "1",
         "price": "5629", 
         "image": "../multimedia/im16.jpg"
@@ -10,15 +10,15 @@
     
     {
         "id": 2, 
-        "name": "Death of a Bachelor",
-        "cd": "Panic at the disco", 
+        "name": "Death Of A Bachelor",
+        "cd": "Panic At The Disco", 
         "cantidad": "1", "price": "3880",
         "image": "../multimedia/im17.jpg"
     },
     
     {
         "id": 3, 
-        "name": "Demon days",
+        "name": "Demon Days",
         "cd": "Gorillaz", 
         "cantidad": "1", 
         "price": "5800",
@@ -27,7 +27,7 @@
     
     {
         "id": 4, 
-        "name": "Happier than ever", 
+        "name": "Happier Than Ever", 
         "cd": "Billie Elish", 
         "cantidad": "1", 
         "price": "2200", 
@@ -35,8 +35,8 @@
     
     {
         "id": 5, 
-        "name": "Im with you", 
-        "cd": "Red hot chili peppers",
+        "name": "Im With You", 
+        "cd": "Red Hot Chili Peppers",
         "cantidad": "1", 
         "price": "1500", 
         "image": "../multimedia/im20.jpg"
@@ -53,7 +53,7 @@
     
     {
         "id": 7, 
-        "name": "Plastic hearts", 
+        "name": "Plastic Hearts", 
         "cd": "Miley Cyrus", 
         "cantidad": "1", 
         "price": "3990", 
@@ -62,8 +62,8 @@
     
     {
         "id": 8,
-        "name": "Scaled and icy", 
-        "cd": "Twenty one pilots", 
+        "name": "Scaled and Icy", 
+        "cd": "Twenty One Pilots", 
         "cantidad": "1", 
         "price": "2100", 
         "image": "../multimedia/im23.jpg"
@@ -80,8 +80,8 @@
     
     {
         "id": 10, 
-        "name": "The new abnormal", 
-        "cd": "The strokes", 
+        "name": "The New Abnormal", 
+        "cd": "The Strokes", 
         "cantidad": "1", 
         "price": "4700", 
         "image": "../multimedia/im25.jpg"
@@ -89,7 +89,7 @@
     
     {
         "id": 11,
-        "name": "Tickets to my downfall", 
+        "name": "Tickets To My Downfall", 
         "cd": "Machine Gun Kelly", 
         "cantidad": "1", 
         "price": "5007", 
@@ -98,7 +98,7 @@
     
     {
         "id": 12, 
-        "name": "Underclass hero", 
+        "name": "Underclass Hero", 
         "cd": "Sum 41", 
         "cantidad": "1", 
         "price": "6500", 
